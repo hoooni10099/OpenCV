@@ -34,6 +34,26 @@ for (x, y, w, h) in faces:
     cv2.destroyAllWindows()
     
 # 0을 입력하면 종료
+# Aaron_Eckhart_0001 사진에서 얼굴을 인식하여 영역 검출
+
+
+
+image = cv2.imread('faces/Aaron_Eckhart_0001.jpg')
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+
+for (x, y, w, h) in faces:
+    cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
+    cropped = image[y: y + h, x: x + w]
+    resize = cv2.resize(cropped, (180, 180))
+    cv2.imshow("crop & resize", resize)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+# 얼굴을 잘라 사이즈를 조정해 출력해주는 코드
+# 검출한 얼굴 영역을 cropped 변수에 지정하고 해당 부분을 180*180의 크기로 재조정
+# 원래 사진 크기는 250*250, 재조정하려면 cv2.resize() 함수 이용
 
 
 
