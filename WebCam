@@ -26,3 +26,7 @@ while (True):
 cap.release()
 out.release()
 cv2.destroyAllWindows()
+
+
+# 노트북 웹캠으로 동영상 입력해서 녹화하기
+# 흑백 화면 출력, 'q' 입력 시 녹화 종료
