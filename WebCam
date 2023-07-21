@@ -30,3 +30,30 @@ cv2.destroyAllWindows()
 
 # 노트북 웹캠으로 동영상 입력해서 녹화하기
 # 흑백 화면 출력, 'q' 입력 시 녹화 종료
+
+#########################################################################
+
+import cv2 as cv
+
+cap = cv.VideoCapture(0)
+
+if cap.isOpened() == False:
+    print("카메라를 열 수 없습니다.")
+    exit(1)
+
+while(True):
+    ret, img_frame = cap.read()
+
+    if ret == False:
+        print("캡쳐 실패")
+        break;
+
+    cv.imshow('Color', img_frame)
+
+    key = cv.waitKey(1)
+
+    if key == 27: # ESC
+        break
+
+cap.release()
+cv.destroyAllWindows()
