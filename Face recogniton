@@ -1,6 +1,7 @@
 # Dataset Link : https://github.com/KDDI-AI-Center/LFW-emotion-dataset
 # Open CV's Trained Face recognition Model : https://github.com/opencv/opencv/tree/master/data/haarcascades
 # 얼굴인식 알고리즘을 이용하여 9330장의 인물 사진으로 얼굴 인식해 보기
+# https://seokii.tistory.com/112
 
 import cv2
 import numpy as np
