@@ -46,7 +46,7 @@ while(True):
 
     if ret == False:
         print("캡쳐 실패")
-        break;
+        break
 
     cv.imshow('Color', img_frame)
 
@@ -56,4 +56,19 @@ while(True):
         break
 
 cap.release()
+cv.destroyAllWindows()
+
+#######################################################################
+
+import cv2 as cv
+
+capture = cv.VideoCapture(0)
+capture.set(cv.CAP_PROP_FRAME_WIDTH, 640)
+capture.set(cv.CAP_PROP_FRAME_HEIGHT, 480)
+
+while cv.waitKey(33) < 0:
+    ret, frame = capture.read()
+    cv.imshow("VideoFrame", frame)
+
+capture.release()
 cv.destroyAllWindows()
